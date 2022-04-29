@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Products from "./page/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
-import Signup from "./components/pages/Auth/Signup/Signup";
-import Signin from "./components/pages/Auth/Signin/Signin";
+import Signin from "./page/Auth/Signin/Signin";
+import Signup from "./page/Auth/Signup/Signup";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Products />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
