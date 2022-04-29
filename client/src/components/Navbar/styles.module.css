@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 50px;
+  line-height: 2px;
+  border-bottom: solid 1px #e2e8f0;
+}
+
+.left {
+  display: flex;
+  margin-left: 40px;
+}
+
+.menu {
+  margin-left: 40px;
+}
+
+.rigth {
+  color: aqua;
+  margin-right: 40px;
+}
+
+.rigth :first-child {
+  margin-right: 20px;
+}
