@@ -1,16 +1,26 @@
 import Card from "../../components/Card/Card";
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
+import { useQuery } from "react-query";
+import { fetchProductList } from "../../api"
 
 function Products() {
+
+  const { isLoading, error, data } = useQuery('products', fetchProductList)
+
+  if (isLoading) return 'Loading...';
+
+  if (error) return 'An error has occurred: ' + error.message;
+
+  console.log(data)
+
   return (
     <>
       <Grid templateColumns='repeat(3, 1fr)' gap={10}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          data.map((item, index) => (
+            <Card key={index} item={item} />
+          ))
+        }
       </Grid>
     </>
   )

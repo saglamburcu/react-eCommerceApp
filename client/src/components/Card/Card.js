@@ -1,25 +1,26 @@
 import { Box, Image, Badge, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import moment from "moment";
 
-function Card() {
+function Card({ item }) {
   return (
     <Box borderWidth='1px' overflow='hidden' m="6">
       <Link to="/#">
-        <Image src='https://picsum.photos/id/237/300/300' alt='product' borderRadius='xl' />
+        <Image src={item.photos} alt='product' borderRadius='xl' loading='lazy' />
 
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             <Badge borderRadius="full" px='2' colorScheme="pink">
-              04/29/2022
+              {moment(item.createdAt).format("DD/MM/YYYY")}
             </Badge>
           </Box>
 
           <Box mt='1' fontWeight='semibold' as='h4' lineHeight='tight' isTruncated>
-            Macbook Pro
+            {item.title}
           </Box>
 
           <Box>
-            20000 TL
+            {item.price} TL
           </Box>
         </Box>
       </Link>
