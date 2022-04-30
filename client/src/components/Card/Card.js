@@ -5,7 +5,7 @@ import moment from "moment";
 function Card({ item }) {
   return (
     <Box borderWidth='1px' overflow='hidden' m="6">
-      <Link to="/#">
+      <Link to={`/product/${item._id}`}>
         <Image src={item.photos} alt='product' borderRadius='xl' loading='lazy' />
 
         <Box p="6">

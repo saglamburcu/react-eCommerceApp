@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className={styles.nav}>
       <div className={styles.left}>
-        <div className="logo">
+        <div className={styles.logo}>
           <Link to="/">E-COMMERCE</Link>
         </div>
         <ul className={styles.menu}>
