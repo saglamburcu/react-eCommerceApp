@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { fetchProduct } from "../../api";
-import { Box, Text, Button, Badge, Container, Center } from "@chakra-ui/react";
+import { Box, Button, Badge, Container, Center } from "@chakra-ui/react";
 import ImageGallery from 'react-image-gallery';
 import moment from "moment";
 
