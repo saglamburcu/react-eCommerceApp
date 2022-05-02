@@ -30,7 +30,15 @@ export const AuthProvider = ({ children }) => {
     setUser(data.user);
 
     localStorage.setItem("access-token", data.accessToken);
-    localStorage.setItem("refreshToken", data.refreshToken)
+    localStorage.setItem("refresh-token", data.refreshToken)
+  };
+
+  const logout = () => {
+    setLoggedIn(false);
+    setUser(null);
+
+    localStorage.removeItem("access-token");
+    localStorage.removeItem("refresh-token");
   };
 
   if (loading) {
@@ -46,8 +54,9 @@ export const AuthProvider = ({ children }) => {
     setUser,
     loggedIn,
     setLoggedIn,
-    login
-  }
+    login,
+    logout
+  };
 
   return (
     <AuthContext.Provider value={values}>
