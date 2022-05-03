@@ -1,9 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+
+const defaultBasket = JSON.parse(localStorage.getItem("basket")) || []
 
 const BasketContext = createContext();
 
 export const BasketProvider = ({ children }) => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(defaultBasket);
+
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(items))
+  }, [items])
 
   const addToBasket = (data, findBasketItem) => {
     if (!findBasketItem) {
@@ -21,12 +27,16 @@ export const BasketProvider = ({ children }) => {
     setItems(filteredItems);
   }
 
+  const emptyBasket = () => {
+    setItems([]);
+  }
 
   const values = {
     items,
     setItems,
     addToBasket,
-    removeToBasket
+    removeToBasket,
+    emptyBasket
   }
 
   return (
