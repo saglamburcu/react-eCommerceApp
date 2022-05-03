@@ -6,6 +6,8 @@ import Signup from "./page/Auth/Signup/Signup";
 import ProductDetail from "./page/ProductDetail/ProductDetail";
 import Profile from "./page/Profile/Profile";
 import ProtectedRoute from "./page/ProtectedRoute";
+import Basket from "./page/Basket/Basket";
+import Error from "./page/Error/Error";
 
 function App() {
   return (
@@ -16,11 +18,13 @@ function App() {
         <Route path="/product/:product_id" element={<ProductDetail />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/basket" element={<Basket />} />
         <Route path="/profile" element={
           <ProtectedRoute>
             <Profile />
           </ProtectedRoute>}
         />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   )

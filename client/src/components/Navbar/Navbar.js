@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
 import AuthContext from "../../contexts/AuthContext";
 import { useContext } from "react";
+import BasketContext from "../../contexts/BasketContext";
 
 function Navbar() {
   const { loggedIn } = useContext(AuthContext);
+  const { items } = useContext(BasketContext);
 
   return (
     <div className={styles.nav}>
@@ -33,11 +35,24 @@ function Navbar() {
         }
 
         {
-          loggedIn && <>
-            <Link to="/profile">
-              <Button color="black">Profile</Button>
-            </Link>
-          </>
+          loggedIn && (
+            <>
+
+              {items.length > 0 && (
+                <Link to="/basket">
+                  <Button color="pink">
+                    Basket ({items.length})
+                  </Button>
+                </Link>
+              )}
+
+              <Link to="/profile">
+                <Button color="black">Profile</Button>
+              </Link>
+            </>
+          )
+
+
         }
       </div>
     </div>
