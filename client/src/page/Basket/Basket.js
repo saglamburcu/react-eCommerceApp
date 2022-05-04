@@ -25,8 +25,7 @@ function Basket() {
       address
     }
 
-    const response = await postOrder(input);
-    //console.log(response)
+    await postOrder(input);
 
     emptyBasket();
     onClose();

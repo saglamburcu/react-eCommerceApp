@@ -6,7 +6,7 @@ import { useContext } from "react";
 import BasketContext from "../../contexts/BasketContext";
 
 function Navbar() {
-  const { loggedIn } = useContext(AuthContext);
+  const { loggedIn, user } = useContext(AuthContext);
   const { items } = useContext(BasketContext);
 
   return (
@@ -35,6 +35,14 @@ function Navbar() {
         }
 
         {
+          user?.role === "admin" && (
+            <Link to="/admin">
+              <Button colorScheme="pink" variant="ghost" >Admin</Button>
+            </Link>
+          )
+        }
+
+        {
           loggedIn && (
             <>
 
@@ -51,8 +59,6 @@ function Navbar() {
               </Link>
             </>
           )
-
-
         }
       </div>
     </div>

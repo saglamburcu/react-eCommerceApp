@@ -6,8 +6,13 @@ import Signup from "./page/Auth/Signup/Signup";
 import ProductDetail from "./page/ProductDetail/ProductDetail";
 import Profile from "./page/Profile/Profile";
 import ProtectedRoute from "./page/ProtectedRoute";
+import Protected from "./page/Protected";
 import Basket from "./page/Basket/Basket";
 import Error from "./page/Error/Error";
+import Admin from "./page/Admin/Admin";
+import Home from "./page/Admin/Home/Home";
+import Product from "./page/Admin/Product/Product";
+import Orders from "./page/Admin/Orders/Orders";
 
 function App() {
   return (
@@ -19,6 +24,15 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/admin" element={
+          <Protected>
+            <Admin />
+          </Protected>
+        } >
+          <Route path="/admin" element={<Home />} />
+          <Route path="/admin/orders" element={<Orders />} />
+          <Route path="/admin/products" element={<Product />} />
+        </Route>
         <Route path="/profile" element={
           <ProtectedRoute>
             <Profile />

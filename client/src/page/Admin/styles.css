@@ -1,0 +1,11 @@
+.admin-menu {
+  display: flex;
+  padding: 20px;
+}
+
+.admin-menu li {
+  margin: 10px;
+  color: crimson;
+  font-weight: 600;
+  font-size: 18px;
+}
