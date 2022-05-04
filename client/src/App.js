@@ -13,6 +13,7 @@ import Admin from "./page/Admin/Admin";
 import Home from "./page/Admin/Home/Home";
 import Product from "./page/Admin/Product/Product";
 import Orders from "./page/Admin/Orders/Orders";
+import OrdersDetail from "./page/Admin/Orders/OrdersDetail";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         } >
           <Route path="/admin" element={<Home />} />
           <Route path="/admin/orders" element={<Orders />} />
+          <Route path="/admin/orders/:order_id" element={<OrdersDetail />} />
           <Route path="/admin/products" element={<Product />} />
         </Route>
         <Route path="/profile" element={

@@ -38,9 +38,9 @@ function Basket() {
 
         {
           items.length < 1 && (
-            <Alert status='warning' width="full">
+            <Alert status='success' width="full">
               <AlertIcon />
-              You have not any items in your basket.
+              Your order has been successfully received.
             </Alert>
           )
         }
