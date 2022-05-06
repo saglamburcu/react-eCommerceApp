@@ -19,7 +19,7 @@ function Admin() {
           </li>
 
           <li>
-            <Link to="/admin/products">
+            <Link to="/admin/product">
               Products
             </Link>
           </li>

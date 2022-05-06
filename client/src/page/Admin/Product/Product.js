@@ -46,7 +46,7 @@ function Product() {
         render: (text, record) => (
           //console.log("record", record)
           <>
-            <Link to={`/admin/products/${record._id}`}>
+            <Link to={`/admin/product/${record._id}`}>
               Edit
             </Link>
 
@@ -62,7 +62,7 @@ function Product() {
               cancelText="No"
               placement="left"
             >
-              <Link to="/" style={{ marginLeft: "10px" }}>
+              <Link to="/#" style={{ marginLeft: "10px" }}>
                 Delete
               </Link>
             </Popconfirm>
