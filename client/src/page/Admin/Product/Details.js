@@ -1,8 +1,6 @@
-import { fetchProduct, updateProduct } from "../../../api";
-import { useQuery } from "react-query";
+import { updateProduct } from "../../../api";
 import { useParams } from "react-router-dom";
-import { useFormik } from "formik";
-import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { message } from 'antd';
@@ -11,11 +9,8 @@ function Details() {
 
   const { product_id } = useParams();
   const [datas, setDatas] = useState({});
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
 
   const [form, setForm] = useState({ title: "", price: "", description: "" })
-
 
   async function getData(id) {
     try {
